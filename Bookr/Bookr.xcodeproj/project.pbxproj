@@ -12,6 +12,7 @@
 		293949BD230E217700EDCB93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293949BB230E217700EDCB93 /* Main.storyboard */; };
 		293949BF230E217700EDCB93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293949BE230E217700EDCB93 /* Assets.xcassets */; };
 		293949C2230E217700EDCB93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293949C0230E217700EDCB93 /* LaunchScreen.storyboard */; };
+		299FF1D3230E2AFF00414326 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299FF1D2230E2AFF00414326 /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		293949BE230E217700EDCB93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293949C1230E217700EDCB93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293949C3230E217700EDCB93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299FF1D2230E2AFF00414326 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				293949B7230E217700EDCB93 /* AppDelegate.swift */,
 				293949B9230E217700EDCB93 /* ViewController.swift */,
 				293949BB230E217700EDCB93 /* Main.storyboard */,
+				299FF1D2230E2AFF00414326 /* Settings.storyboard */,
 				293949BE230E217700EDCB93 /* Assets.xcassets */,
 				293949C0230E217700EDCB93 /* LaunchScreen.storyboard */,
 				293949C3230E217700EDCB93 /* Info.plist */,
@@ -125,6 +128,7 @@
 				293949C2230E217700EDCB93 /* LaunchScreen.storyboard in Resources */,
 				293949BF230E217700EDCB93 /* Assets.xcassets in Resources */,
 				293949BD230E217700EDCB93 /* Main.storyboard in Resources */,
+				299FF1D3230E2AFF00414326 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
