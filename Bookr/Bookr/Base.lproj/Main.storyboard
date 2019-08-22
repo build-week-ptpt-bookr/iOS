@@ -38,11 +38,11 @@
             </objects>
             <point key="canvasLocation" x="-1193" y="-66"/>
         </scene>
-        <!--Item 1-->
+        <!--Books-->
         <scene sceneID="iqC-bU-bhf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rwa-UB-h3M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="qwj-HE-ys3"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="books" id="qwj-HE-ys3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="70R-Pk-PDE">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sb-pM-Fmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.6231884057972" y="-385.04464285714283"/>
+            <point key="canvasLocation" x="1252" y="-390"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cGL-1l-P9o">
@@ -292,7 +292,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZS-K3-E8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030.4347826086957" y="-385.04464285714283"/>
+            <point key="canvasLocation" x="2014" y="-390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="books" width="36" height="32"/>
+    </resources>
 </document>
