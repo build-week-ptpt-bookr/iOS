@@ -164,7 +164,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
-				ORGANIZATIONNAME = "John Kouris";
+				ORGANIZATIONNAME = "Bookr Team";
 				TargetAttributes = {
 					293949B3230E217700EDCB93 = {
 						CreatedOnToolsVersion = 10.3;
