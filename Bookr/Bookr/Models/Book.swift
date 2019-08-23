@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Books {
+struct Book {
     
     let author: String
     let title: String
