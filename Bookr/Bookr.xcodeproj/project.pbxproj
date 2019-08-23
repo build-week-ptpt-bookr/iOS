@@ -13,6 +13,9 @@
 		293949C2230E217700EDCB93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293949C0230E217700EDCB93 /* LaunchScreen.storyboard */; };
 		299FF1D3230E2AFF00414326 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299FF1D2230E2AFF00414326 /* Settings.storyboard */; };
 		D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E3230E3E1500AC3750 /* SettingsViewController.swift */; };
+		D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */; };
+		D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89477230F49BA00633A6F /* SettingsModel.swift */; };
+		D7F8947A230F4EE800633A6F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		293949C3230E217700EDCB93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299FF1D2230E2AFF00414326 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D73162E3230E3E1500AC3750 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		D7F89477230F49BA00633A6F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				293949B7230E217700EDCB93 /* AppDelegate.swift */,
 				293949BB230E217700EDCB93 /* Main.storyboard */,
 				D73162E3230E3E1500AC3750 /* SettingsViewController.swift */,
+				D7F89477230F49BA00633A6F /* SettingsModel.swift */,
+				D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */,
+				D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */,
 				299FF1D2230E2AFF00414326 /* Settings.storyboard */,
 				293949BE230E217700EDCB93 /* Assets.xcassets */,
 				293949C0230E217700EDCB93 /* LaunchScreen.storyboard */,
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */,
+				D7F8947A230F4EE800633A6F /* SettingsTableViewController.swift in Sources */,
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
+				D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
