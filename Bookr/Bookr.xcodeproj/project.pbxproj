@@ -17,6 +17,7 @@
 		D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */; };
 		D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89477230F49BA00633A6F /* SettingsModel.swift */; };
 		D7F8947A230F4EE800633A6F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */; };
+		D7F8947E230F762500633A6F /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8947D230F762500633A6F /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D7F89477230F49BA00633A6F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D7F8947D230F762500633A6F /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				293949BE230E217700EDCB93 /* Assets.xcassets */,
 				293949C0230E217700EDCB93 /* LaunchScreen.storyboard */,
 				293949C3230E217700EDCB93 /* Info.plist */,
+				D7F8947D230F762500633A6F /* Books.swift */,
 			);
 			path = Bookr;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F8947E230F762500633A6F /* Books.swift in Sources */,
 				D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */,
 				D7F8947A230F4EE800633A6F /* SettingsTableViewController.swift in Sources */,
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
