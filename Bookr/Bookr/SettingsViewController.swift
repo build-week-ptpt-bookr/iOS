@@ -9,11 +9,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    var settings: [SettingsModel] = [ SettingsModel(title: "Dark Mode", color: .light)]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
+    
     }
     
 
@@ -26,5 +29,45 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func switchButtonTapped(_ sender: UISwitch) {
+        if sender.isOn {
+            view.backgroundColor = .black
+            settings.remove(at: 0)
+            let darkMode = SettingsModel(title: "Dark Mode", color: .dark)
+            settings.append(darkMode)
+            
+        } else if !sender.isOn {
+            view.backgroundColor = .white
+            let lightMode = SettingsModel(title: "Dark Mode", color: .light)
+            settings.append(lightMode)
+        }
+        
+    }
+    
+    
 
+}
+
+extension SettingsViewController: UITableViewDataSource {
+    
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else { return UITableViewCell()}
+        
+        let setting = settings[indexPath.row]
+        cell.setting = setting
+        return cell
+    }
+    
+    
+    
+    
+    
+    
 }
