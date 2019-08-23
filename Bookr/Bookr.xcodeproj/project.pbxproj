@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2929D690230F7590006E7D0B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2929D68F230F7590006E7D0B /* Review.swift */; };
 		293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293949B7230E217700EDCB93 /* AppDelegate.swift */; };
 		293949BD230E217700EDCB93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293949BB230E217700EDCB93 /* Main.storyboard */; };
 		293949BF230E217700EDCB93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293949BE230E217700EDCB93 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2929D68F230F7590006E7D0B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		293949B4230E217700EDCB93 /* Bookr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293949B7230E217700EDCB93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293949BC230E217700EDCB93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				293949BB230E217700EDCB93 /* Main.storyboard */,
 				D73162E3230E3E1500AC3750 /* SettingsViewController.swift */,
 				D7F89477230F49BA00633A6F /* SettingsModel.swift */,
+				2929D68F230F7590006E7D0B /* Review.swift */,
 				D7F89479230F4EE800633A6F /* SettingsTableViewController.swift */,
 				D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */,
 				299FF1D2230E2AFF00414326 /* Settings.storyboard */,
@@ -153,6 +156,7 @@
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
 				D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */,
+				2929D690230F7590006E7D0B /* Review.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
