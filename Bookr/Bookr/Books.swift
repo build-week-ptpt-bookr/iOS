@@ -13,7 +13,7 @@ struct Books {
     let author: String
     let title: String
     let publisher: String
-    let reviewer: [Review]
+    var reviews: [Review]
     
 }
 
