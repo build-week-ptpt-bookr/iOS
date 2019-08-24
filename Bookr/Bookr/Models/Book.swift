@@ -9,12 +9,10 @@
 import Foundation
 
 struct Book {
-    
     let author: String
     let title: String
     let publisher: String
     var reviews: [Review]
-    
 }
 
 
