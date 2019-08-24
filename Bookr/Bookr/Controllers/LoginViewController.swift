@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        self.setupToHideKeyboardOnTapOnView()
+        usernameTextField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -55,6 +56,7 @@ class LoginViewController: UIViewController {
         signUpButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         signUpButton.backgroundColor = .red
+        signUpButton.isHidden = true
         
         
         // textView For Username
@@ -80,6 +82,7 @@ class LoginViewController: UIViewController {
         passwordTextField.backgroundColor = .lightGray
         passwordTextField.isSecureTextEntry = true
         
+   
     }
  
     // TODO: - Create network call up to API to check if user has account and login if yes.
@@ -113,21 +116,8 @@ class LoginViewController: UIViewController {
         }
         
     }
-        func setupToHideKeyboardOnTapOnView() {
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-                target: self,
-                action: #selector(LoginViewController.dismissKeyboard))
-            
-            tap.cancelsTouchesInView = false
-            view.addGestureRecognizer(tap)
-        }
-        
-        @objc func dismissKeyboard()
-        {
-            view.endEditing(true)
-        }
     
-    
+
     func alertMessage(title: String, message: String) {
         
          let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -147,4 +137,26 @@ class LoginViewController: UIViewController {
     }
     
 
+}
+
+// MARK: - Keyboard Management
+extension LoginViewController: UITextFieldDelegate {
+
+    
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Keyboard appears after tapping fields.
+        if let text = textField.text, text.isEmpty {
+            switch textField {
+            case usernameTextField: usernameTextField.becomeFirstResponder()
+            case passwordTextField: passwordTextField.becomeFirstResponder()
+            default: textField.resignFirstResponder()
+            }
+        }
+        return true
+    }
+    
+
+    
+    
 }
