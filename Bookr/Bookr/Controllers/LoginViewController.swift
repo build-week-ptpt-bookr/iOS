@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController {
     
     let loginButton = UIButton()
     let signUpButton = UIButton()
@@ -23,9 +23,6 @@ class LoginViewController: UIViewController{
         self.setupToHideKeyboardOnTapOnView()
         // Do any additional setup after loading the view.
     }
-    
-    
-    
     
     func setupLayout() {
         //Background Image
@@ -69,7 +66,7 @@ class LoginViewController: UIViewController{
         usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
         usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         usernameTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        usernameTextField.backgroundColor = .gray
+        usernameTextField.backgroundColor = .lightGray
 
         
         // Password TextView
@@ -80,29 +77,38 @@ class LoginViewController: UIViewController{
         passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         passwordTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        passwordTextField.backgroundColor = .gray
+        passwordTextField.backgroundColor = .lightGray
+        passwordTextField.isSecureTextEntry = true
         
     }
-    
-    // MARK: - Navigation
-
-    // Segue Information to
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
  
-    // TODO: - Log User In with provided credentials
+    // TODO: - Create network call up to API to check if user has account and login if yes.
     @objc func loginButtonTapped(sender: UIButton) {
         guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
     
         if user.isEmpty || pass.isEmpty {
-            alertMessage()
+            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
         }
+        
+        if user.contains(" ") {
+            alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
+            usernameTextField.text = ""
+        }
+        let acctUser = ["username":user]
+        let userPass = ["password":pass]
+        
+        //Performs Segue to Settings for testing. Will go to Main screen when it is built.
+//       performSegue(withIdentifier: "toSettings", sender: sender)
+ 
+    
     }
-    // TODO: - Create Function that unhides Email textview and hides sign up button
+    // TODO: - Create network call that adds user into back in and log them in
     @objc func signUpButtonTapped(sender: UIButton) {
-        signUpButton.isHidden = true
+        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
+        
+        if user.isEmpty || pass.isEmpty {
+            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
+        }
         
     }
         func setupToHideKeyboardOnTapOnView() {
@@ -119,12 +125,23 @@ class LoginViewController: UIViewController{
             view.endEditing(true)
         }
     
-    func alertMessage() {
+    
+    func alertMessage(title: String, message: String) {
         
-         let alert = UIAlertController(title: "Must fill out fields", message: "Please fill in both Username and Password Fields", preferredStyle: .alert)
+         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true)
        
+    }
+    
+    // MARK: - Navigation
+    // Segue Information to
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSettings" {
+            if let vc = segue.destination as? SettingsViewController { 
+                vc.delegate = self as? LoginDelegate
+            }
+        }
     }
     
 

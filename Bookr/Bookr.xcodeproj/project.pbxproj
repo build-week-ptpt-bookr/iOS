@@ -20,6 +20,7 @@
 		D7F89480230F7EE100633A6F /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */; };
 		D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89481230F836E00633A6F /* LoginViewController.swift */; };
 		D7F89484230F8F6B00633A6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89483230F8F6B00633A6F /* ViewController.swift */; };
+		D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		D7F89481230F836E00633A6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7F89483230F8F6B00633A6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				D73162E3230E3E1500AC3750 /* SettingsViewController.swift */,
 				D7F89481230F836E00633A6F /* LoginViewController.swift */,
 				D7F89483230F8F6B00633A6F /* ViewController.swift */,
+				D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				D7F8947E230F762500633A6F /* Book.swift in Sources */,
 				D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */,
 				D7F89484230F8F6B00633A6F /* ViewController.swift in Sources */,
+				D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */,
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
