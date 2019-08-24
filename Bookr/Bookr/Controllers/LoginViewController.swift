@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController{
     
     let loginButton = UIButton()
+    let signUpButton = UIButton()
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
@@ -19,6 +20,7 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        self.setupToHideKeyboardOnTapOnView()
         // Do any additional setup after loading the view.
     }
     
@@ -35,6 +37,7 @@ class LoginViewController: UIViewController{
        
         // Login Button
         loginButton.title(for: .normal)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         loginButton.setTitle("Log In", for: .normal)
         view.addSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -44,27 +47,92 @@ class LoginViewController: UIViewController{
         loginButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        // textView For Username
-        usernameTextField.placeholder = "Enter Username Here"
-//        usernameTextField.centerYAnchor.constraint
+        // Sign Up Button
+        signUpButton.title(for: .normal)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        signUpButton.setTitle("Sign Up", for: .normal)
+        view.addSubview(signUpButton)
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        signUpButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 75).isActive = true
+        signUpButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        signUpButton.backgroundColor = .red
         
-    
+        
+        // textView For Username
+        view.addSubview(usernameTextField)
+        
+        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
+        usernameTextField.placeholder = "Enter Username Here"
+        usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
+        usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        usernameTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        usernameTextField.backgroundColor = .gray
+
+        
         // Password TextView
+        view.addSubview(passwordTextField)
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Enter Password Here"
+        passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        passwordTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        passwordTextField.backgroundColor = .gray
         
     }
     
     
     
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Segue Information to
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
+    // TODO: - Create function that takes
+    @objc func loginButtonTapped(sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        
+        UIView.animate(withDuration: 1.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(1.0),
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+        
+    }
+    // TODO: - Create Function that unhides Email textview and hides sign up button
+    @objc func signUpButtonTapped(sender: UIButton) {
+        signUpButton.isHidden = true
+        emailTextField.isHidden = false
+
+        
+    }
+        func setupToHideKeyboardOnTapOnView() {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(LoginViewController.dismissKeyboard))
+            
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+        
+        @objc func dismissKeyboard()
+        {
+            view.endEditing(true)
+        }
+    
 
 }
