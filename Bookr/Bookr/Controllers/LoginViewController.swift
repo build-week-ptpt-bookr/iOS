@@ -94,11 +94,13 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
-        let acctUser = ["username":user]
-        let userPass = ["password":pass]
+        //
+       
         
         //Performs Segue to Settings for testing. Will go to Main screen when it is built.
-//       performSegue(withIdentifier: "toSettings", sender: sender)
+//        let acctUser = ["username":user]
+//        let userPass = ["password":pass]
+//       performSegue(withIdentifier: "toMain", sender: sender)
  
     
     }
@@ -137,7 +139,7 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     // Segue Information to
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSettings" {
+        if segue.identifier == "toMain" {
             if let vc = segue.destination as? SettingsViewController { 
                 vc.delegate = self as? LoginDelegate
             }
