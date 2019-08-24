@@ -84,10 +84,6 @@ class LoginViewController: UIViewController{
         
     }
     
-    
-    
-
-
     // MARK: - Navigation
 
     // Segue Information to
@@ -96,28 +92,17 @@ class LoginViewController: UIViewController{
         // Pass the selected object to the new view controller.
     }
  
-    // TODO: - Create function that takes
+    // TODO: - Log User In with provided credentials
     @objc func loginButtonTapped(sender: UIButton) {
-        
-        sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        
-        UIView.animate(withDuration: 1.0,
-                       delay: 0,
-                       usingSpringWithDamping: CGFloat(0.20),
-                       initialSpringVelocity: CGFloat(1.0),
-                       options: UIView.AnimationOptions.allowUserInteraction,
-                       animations: {
-                        sender.transform = CGAffineTransform.identity
-        },
-                       completion: { Void in()  }
-        )
-        
+        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
+    
+        if user.isEmpty || pass.isEmpty {
+            alertMessage()
+        }
     }
     // TODO: - Create Function that unhides Email textview and hides sign up button
     @objc func signUpButtonTapped(sender: UIButton) {
         signUpButton.isHidden = true
-        emailTextField.isHidden = false
-
         
     }
         func setupToHideKeyboardOnTapOnView() {
@@ -133,6 +118,14 @@ class LoginViewController: UIViewController{
         {
             view.endEditing(true)
         }
+    
+    func alertMessage() {
+        
+         let alert = UIAlertController(title: "Must fill out fields", message: "Please fill in both Username and Password Fields", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+       
+    }
     
 
 }
