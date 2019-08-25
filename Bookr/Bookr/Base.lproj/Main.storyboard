@@ -68,7 +68,7 @@
         <!--Bookr-->
         <scene sceneID="Mg3-NA-odP">
             <objects>
-                <collectionViewController id="AKw-me-h3M" sceneMemberID="viewController">
+                <collectionViewController id="AKw-me-h3M" customClass="BooksCollectionViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vHP-Zg-Zh0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="W6R-jU-iZv">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="W6R-jU-iZv" customClass="BookCollectionViewCell" customModule="Bookr" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -140,7 +140,7 @@
         <!--Book Title-->
         <scene sceneID="p5H-ML-3fN">
             <objects>
-                <viewController id="HbI-9h-wKv" customClass="ViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HbI-9h-wKv" customClass="BookDetailViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D59-UM-O5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="-390.40178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="cGL-1l-P9o">
             <objects>
-                <viewController id="7ZT-bI-Rbw" sceneMemberID="viewController">
+                <viewController id="7ZT-bI-Rbw" customClass="ReviewViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gEl-sg-aMB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
