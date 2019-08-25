@@ -17,10 +17,12 @@
 		D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */; };
 		D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89477230F49BA00633A6F /* SettingsModel.swift */; };
 		D7F8947E230F762500633A6F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8947D230F762500633A6F /* Book.swift */; };
+    // feature_loginscreen
 		D7F89480230F7EE100633A6F /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */; };
 		D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89481230F836E00633A6F /* LoginViewController.swift */; };
 		D7F89484230F8F6B00633A6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89483230F8F6B00633A6F /* ViewController.swift */; };
 		D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +38,12 @@
 		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D7F89477230F49BA00633A6F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D7F8947D230F762500633A6F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+    // feature_loginscreen
 		D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		D7F89481230F836E00633A6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7F89483230F8F6B00633A6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			children = (
 				293949B6230E217700EDCB93 /* Bookr */,
 				293949B5230E217700EDCB93 /* Products */,
+				DCC7C45E230FA3AC0079B3BC /* Configuration */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,8 +132,17 @@
 		296D6220230F7DB600A0081B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DCC706C0230FA85D000C8069 /* UIImageView+AsyncLoadFromURL.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DCC7C45E230FA3AC0079B3BC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				DCC7C45F230FA3DF0079B3BC /* SampleCode.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +173,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
-				ORGANIZATIONNAME = "John Kouris";
+				ORGANIZATIONNAME = "Bookr Team";
 				TargetAttributes = {
 					293949B3230E217700EDCB93 = {
 						CreatedOnToolsVersion = 10.3;
@@ -192,8 +206,9 @@
 				293949C2230E217700EDCB93 /* LaunchScreen.storyboard in Resources */,
 				293949BF230E217700EDCB93 /* Assets.xcassets in Resources */,
 				293949BD230E217700EDCB93 /* Main.storyboard in Resources */,
+    // feature_loginscreen
 				D7F89480230F7EE100633A6F /* LoginScreen.storyboard in Resources */,
-				299FF1D3230E2AFF00414326 /* Settings.storyboard in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +226,7 @@
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
+				DCC706C1230FA85D000C8069 /* UIImageView+AsyncLoadFromURL.swift in Sources */,
 				D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */,
 				2929D690230F7590006E7D0B /* Review.swift in Sources */,
 			);
@@ -358,15 +374,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SE96QQ4Q6G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bookr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JohnKouris.Bookr;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool-temp-no-sign.Bookr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -376,15 +394,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SE96QQ4Q6G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bookr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JohnKouris.Bookr;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool-temp-no-sign.Bookr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -16,5 +16,4 @@ enum Mode: String {
 struct SettingsModel {
     let title: String
     let color: Mode
-    
 }
