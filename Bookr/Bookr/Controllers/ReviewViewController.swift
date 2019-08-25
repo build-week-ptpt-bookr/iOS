@@ -9,6 +9,9 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
+    
+    @IBOutlet weak var headlineTextField: UITextField!
+    @IBOutlet weak var reviewContentTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +19,12 @@ class ReviewViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    @IBAction func submitButtonTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
 }

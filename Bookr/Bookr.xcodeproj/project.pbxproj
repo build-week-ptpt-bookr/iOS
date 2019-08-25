@@ -14,6 +14,7 @@
 		29754B4123130CAE00948C2A /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29754B4023130CAE00948C2A /* BookCollectionViewCell.swift */; };
 		29754B4323130CE100948C2A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29754B4223130CE100948C2A /* BookDetailViewController.swift */; };
 		29754B4523130D0500948C2A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29754B4423130D0500948C2A /* ReviewViewController.swift */; };
+		29754B4723130E5800948C2A /* BookReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29754B4623130E5800948C2A /* BookReviewTableViewCell.swift */; };
 		D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E3230E3E1500AC3750 /* SettingsViewController.swift */; };
 		D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */; };
 		D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89477230F49BA00633A6F /* SettingsModel.swift */; };
@@ -36,6 +37,7 @@
 		29754B4023130CAE00948C2A /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		29754B4223130CE100948C2A /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		29754B4423130D0500948C2A /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		29754B4623130E5800948C2A /* BookReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewTableViewCell.swift; sourceTree = "<group>"; };
 		299FF1D2230E2AFF00414326 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D73162E3230E3E1500AC3750 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */,
 				29754B4023130CAE00948C2A /* BookCollectionViewCell.swift */,
+				29754B4623130E5800948C2A /* BookReviewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
+				29754B4723130E5800948C2A /* BookReviewTableViewCell.swift in Sources */,
 				D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */,
 				2929D690230F7590006E7D0B /* Review.swift in Sources */,
 			);
