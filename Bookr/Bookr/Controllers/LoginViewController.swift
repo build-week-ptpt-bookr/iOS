@@ -100,7 +100,7 @@ class LoginViewController: UIViewController {
         //
        
         
-        //Performs Segue to Settings for testing. Will go to Main screen when it is built.
+        //Performs Segue to SettingsSB for testing. Will go to Main screen when it is built.
 //        let acctUser = ["username":user]
 //        let userPass = ["password":pass]
 //       performSegue(withIdentifier: "toMain", sender: sender)

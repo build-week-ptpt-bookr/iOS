@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="90" y="-1"/>
         </scene>
-        <!--Settings-->
+        <!--SettingsSB-->
         <scene sceneID="i2C-7B-eqC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="WsW-Ad-Rro" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="LoginScreenSB" storyboardName="SettingsSB" id="WsW-Ad-Rro" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-DL-ZxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="-166"/>
