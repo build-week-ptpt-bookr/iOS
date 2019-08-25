@@ -96,6 +96,10 @@ class LoginViewController: UIViewController {
         if user.contains(" ") {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
+        }else {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toMain", sender: self)
+            }
         }
         //
        

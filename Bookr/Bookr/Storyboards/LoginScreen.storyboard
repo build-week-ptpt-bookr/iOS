@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qy-pA-VR0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gkb-Bl-WxK">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,22 +11,22 @@
     </dependencies>
     <scenes>
         <!--Login View Controller-->
-        <scene sceneID="PTD-Wh-YkK">
+        <scene sceneID="A9q-7m-5np">
             <objects>
-                <viewController id="1qy-pA-VR0" customClass="LoginViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h3X-CM-kaW">
+                <viewController id="Gkb-Bl-WxK" customClass="LoginViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8P-x4-626">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="HAB-gH-fem"/>
+                        <viewLayoutGuide key="safeArea" id="khl-Jg-U55"/>
                     </view>
                     <connections>
-                        <segue destination="WsW-Ad-Rro" kind="show" identifier="toSettings" id="ODM-ED-DQG"/>
+                        <segue destination="3CS-Ox-Q39" kind="show" identifier="toMain" id="BXl-If-DTq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5M6-lD-qe5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBN-9h-O4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="-1"/>
+            <point key="canvasLocation" x="475" y="-12"/>
         </scene>
         <!--SettingsSB-->
         <scene sceneID="i2C-7B-eqC">
@@ -34,7 +34,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="LoginScreenSB" storyboardName="SettingsSB" id="WsW-Ad-Rro" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-DL-ZxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-166"/>
+            <point key="canvasLocation" x="1583" y="-179"/>
         </scene>
     </scenes>
 </document>
