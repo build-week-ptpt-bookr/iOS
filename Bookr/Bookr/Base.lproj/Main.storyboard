@@ -10,20 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="nkh-06-q8r">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="Ww2-kj-Lqn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dCY-D6-DiY"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aQX-Zy-pje" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-236" y="90"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a0p-Fn-noT">
             <objects>
-                <tabBarController id="UAG-Wk-d1s" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainSB" id="UAG-Wk-d1s" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UQu-6m-gba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -31,12 +21,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="Rwa-UB-h3M" kind="relationship" relationship="viewControllers" id="6XS-sx-Raa"/>
-                        <segue destination="Ww2-kj-Lqn" kind="relationship" relationship="viewControllers" id="Nyu-QL-Q88"/>
+                        <segue destination="owx-Kh-Al4" kind="relationship" relationship="viewControllers" id="eeb-A1-pvr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDo-ZJ-8gm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1193" y="-66"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="r2q-48-v0h">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SettingsSB" storyboardName="Settings" id="owx-Kh-Al4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6hx-rf-B9p"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUe-c7-CQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="77"/>
         </scene>
         <!--Books-->
         <scene sceneID="iqC-bU-bhf">
@@ -47,6 +47,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="70R-Pk-PDE">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.36249566080000001" green="0.23625454309999999" blue="0.62967723610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -132,7 +140,7 @@
         <!--Book Title-->
         <scene sceneID="p5H-ML-3fN">
             <objects>
-                <viewController id="HbI-9h-wKv" sceneMemberID="viewController">
+                <viewController id="HbI-9h-wKv" customClass="ViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D59-UM-O5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
