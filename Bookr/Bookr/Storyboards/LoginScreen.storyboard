@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="A9q-7m-5np">
             <objects>
-                <viewController id="Gkb-Bl-WxK" customClass="LoginViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginSB" id="Gkb-Bl-WxK" customClass="LoginViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8P-x4-626">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,20 +21,20 @@
                         <viewLayoutGuide key="safeArea" id="khl-Jg-U55"/>
                     </view>
                     <connections>
-                        <segue destination="3CS-Ox-Q39" kind="show" identifier="toMain" id="BXl-If-DTq"/>
+                        <segue destination="S5G-ag-znV" kind="presentation" identifier="toMain" id="6OX-jg-EbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBN-9h-O4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="475" y="-12"/>
         </scene>
-        <!--SettingsSB-->
-        <scene sceneID="i2C-7B-eqC">
+        <!--Main-->
+        <scene sceneID="0hk-Gb-JwM">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="LoginScreenSB" storyboardName="SettingsSB" id="WsW-Ad-Rro" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-DL-ZxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="MainSB" storyboardName="Main" id="S5G-ag-znV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaj-wF-TAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="-179"/>
+            <point key="canvasLocation" x="1341" y="-33"/>
         </scene>
     </scenes>
 </document>

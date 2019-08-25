@@ -31,7 +31,7 @@
         <!--Settings-->
         <scene sceneID="r2q-48-v0h">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="owx-Kh-Al4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SettingsSB" storyboardName="Settings" id="owx-Kh-Al4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6hx-rf-B9p"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUe-c7-CQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
