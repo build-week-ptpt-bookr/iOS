@@ -12,6 +12,10 @@ class SettingsViewController: UIViewController {
     
     var settings: [SettingsModel] = [ SettingsModel(title: "Dark Mode", color: .light)]
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+
+    var delegate: LoginDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +69,13 @@ extension SettingsViewController: UITableViewDataSource {
         return cell
     }
     
-    
+   
+}
+
+extension SettingsViewController: LoginDelegate {
+    func userAttemptedToLogIn(_ creds: [String : String]) {
+//        let user = creds[""]
+    }
     
     
     
