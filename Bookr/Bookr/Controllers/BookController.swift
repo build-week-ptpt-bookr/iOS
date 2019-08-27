@@ -8,4 +8,22 @@
 
 import Foundation
 
+class BookController {
+    
+    private(set) var books: [Book] = []
+    
+    func loadBooks() {
+        
+        // TODO - Add networking code to load books from API
+        
+    }
+    
+    func delete(book: Book) {
+        
+        // TODO - Add code to delete a book from API
+        
+    }
+    
+}
+
 
