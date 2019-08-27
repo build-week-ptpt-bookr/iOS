@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,10 +23,10 @@
 		D7F8947E230F762500633A6F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8947D230F762500633A6F /* Book.swift */; };
 		D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89481230F836E00633A6F /* LoginViewController.swift */; };
 		D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */; };
-		DCC706D12312E2D5000C8069 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */; };
-		DCC706D22312E2D8000C8069 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299FF1D2230E2AFF00414326 /* Settings.storyboard */; };
-		DCC706D82312E33F000C8069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC706D42312E33F000C8069 /* LaunchScreen.storyboard */; };
-		DCC706D92312E33F000C8069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC706D62312E33F000C8069 /* Main.storyboard */; };
+		DC980DD82314D9DB00F4A6FE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DD62314D9DB00F4A6FE /* Settings.storyboard */; };
+		DC980DDB2314D9F300F4A6FE /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DD92314D9F300F4A6FE /* LoginScreen.storyboard */; };
+		DC980DE02314DA5500F4A6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DDE2314DA5500F4A6FE /* Main.storyboard */; };
+		DC980DE32314DA5F00F4A6FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DE12314DA5F00F4A6FE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,16 +42,16 @@
 		29754B4223130CE100948C2A /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		29754B4423130D0500948C2A /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		29754B4623130E5800948C2A /* BookReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewTableViewCell.swift; sourceTree = "<group>"; };
-		299FF1D2230E2AFF00414326 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D73162E3230E3E1500AC3750 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D7F89477230F49BA00633A6F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D7F8947D230F762500633A6F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		D7F89481230F836E00633A6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
-		DCC706D52312E33F000C8069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DCC706D72312E33F000C8069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		DC980DD72314D9DB00F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/Settings.storyboard; sourceTree = SOURCE_ROOT; };
+		DC980DDA2314D9F300F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/LoginScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		DC980DDF2314DA5500F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		DC980DE22314DA5F00F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,6 @@
 				296D621E230F7DA200A0081B /* Views */,
 				295257402314CF4D00D34F73 /* Model Controllers */,
 				296D621D230F7D9C00A0081B /* Controllers */,
-				DCC706D32312E33F000C8069 /* Base.lproj */,
 				296D621C230F7D9300A0081B /* Storyboards */,
 				293949BE230E217700EDCB93 /* Assets.xcassets */,
 				293949C3230E217700EDCB93 /* Info.plist */,
@@ -109,8 +108,10 @@
 		296D621C230F7D9300A0081B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				299FF1D2230E2AFF00414326 /* Settings.storyboard */,
-				D7F8947F230F7EE100633A6F /* LoginScreen.storyboard */,
+				DC980DD62314D9DB00F4A6FE /* Settings.storyboard */,
+				DC980DD92314D9F300F4A6FE /* LoginScreen.storyboard */,
+				DC980DDE2314DA5500F4A6FE /* Main.storyboard */,
+				DC980DE12314DA5F00F4A6FE /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -156,16 +157,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		DCC706D32312E33F000C8069 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				DCC706D42312E33F000C8069 /* LaunchScreen.storyboard */,
-				DCC706D62312E33F000C8069 /* Main.storyboard */,
-			);
-			name = Base.lproj;
-			path = Bookr/Base.lproj;
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,7 +193,7 @@
 				};
 			};
 			buildConfigurationList = 293949AF230E217700EDCB93 /* Build configuration list for PBXProject "Bookr" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -224,11 +215,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC706D22312E2D8000C8069 /* Settings.storyboard in Resources */,
-				DCC706D92312E33F000C8069 /* Main.storyboard in Resources */,
-				DCC706D82312E33F000C8069 /* LaunchScreen.storyboard in Resources */,
-				DCC706D12312E2D5000C8069 /* LoginScreen.storyboard in Resources */,
+				DC980DD82314D9DB00F4A6FE /* Settings.storyboard in Resources */,
+				DC980DDB2314D9F300F4A6FE /* LoginScreen.storyboard in Resources */,
 				293949BF230E217700EDCB93 /* Assets.xcassets in Resources */,
+				DC980DE32314DA5F00F4A6FE /* LaunchScreen.storyboard in Resources */,
+				DC980DE02314DA5500F4A6FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,20 +251,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DCC706D42312E33F000C8069 /* LaunchScreen.storyboard */ = {
+		DC980DD62314D9DB00F4A6FE /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DCC706D52312E33F000C8069 /* Base */,
+				DC980DD72314D9DB00F4A6FE /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
-		DCC706D62312E33F000C8069 /* Main.storyboard */ = {
+		DC980DD92314D9F300F4A6FE /* LoginScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DCC706D72312E33F000C8069 /* Base */,
+				DC980DDA2314D9F300F4A6FE /* Base */,
+			);
+			name = LoginScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DC980DDE2314DA5500F4A6FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC980DDF2314DA5500F4A6FE /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC980DE12314DA5F00F4A6FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC980DE22314DA5F00F4A6FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -385,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -403,6 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = Bookr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = Bookr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
