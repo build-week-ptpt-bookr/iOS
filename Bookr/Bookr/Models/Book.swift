@@ -8,11 +8,26 @@
 
 import Foundation
 
-struct Book {
-    let author: String
-    let title: String
-    let publisher: String
-    var reviews: [Review]
+struct Book: Codable {
+    var id: Int
+    var bookID: Int
+    var title: String
+    var coverUrl: String
+    var description: String?
+    var average: Double?
+    var authors: [String]
+    var reviews: [Review]?
+    
+    init(id: Int, title: String, coverUrl: String, description: String?, average: Double?, authors: [String], reviews: [Review]){
+        self.id = id
+        self.bookID = id
+        self.title = title
+        self.coverUrl = coverUrl
+        self.description = description
+        self.average = average
+        self.authors = authors
+        self.reviews = reviews
+    }
 }
 
 
