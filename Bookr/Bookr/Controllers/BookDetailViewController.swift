@@ -1,15 +1,21 @@
 //
-//  ViewController.swift
+//  BookDetailViewController.swift
 //  Bookr
 //
-//  Created by Aaron on 8/22/19.
-//  Copyright © 2019 John Kouris. All rights reserved.
+//  Created by John Kouris on 8/25/19.
+//  Copyright © 2019 Bookr Team. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class BookDetailViewController: UIViewController {
+    
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var publisherLabel: UILabel!
+    
+    @IBOutlet weak var bookReviewsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +32,9 @@ class ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
 
 }

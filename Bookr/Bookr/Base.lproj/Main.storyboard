@@ -68,7 +68,7 @@
         <!--Bookr-->
         <scene sceneID="Mg3-NA-odP">
             <objects>
-                <collectionViewController id="AKw-me-h3M" sceneMemberID="viewController">
+                <collectionViewController id="AKw-me-h3M" customClass="BooksCollectionViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vHP-Zg-Zh0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="W6R-jU-iZv">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="W6R-jU-iZv" customClass="BookCollectionViewCell" customModule="Bookr" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -122,6 +122,8 @@
                                     <constraint firstAttribute="bottom" secondItem="SEl-fE-hU3" secondAttribute="bottom" id="ncV-j3-oVB"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="bookImageView" destination="wIL-Td-azd" id="qum-69-yf4"/>
+                                    <outlet property="bookTitleLabel" destination="uG2-Z0-deL" id="rYh-40-i4S"/>
                                     <segue destination="HbI-9h-wKv" kind="show" id="kda-Nj-li2"/>
                                 </connections>
                             </collectionViewCell>
@@ -140,7 +142,7 @@
         <!--Book Title-->
         <scene sceneID="p5H-ML-3fN">
             <objects>
-                <viewController id="HbI-9h-wKv" customClass="ViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HbI-9h-wKv" customClass="BookDetailViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D59-UM-O5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="272" width="414" height="541"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="YkV-eJ-esR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="YkV-eJ-esR" customClass="BookReviewTableViewCell" customModule="Bookr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YkV-eJ-esR" id="1Jk-vm-x5x">
@@ -215,6 +217,11 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="TIa-er-drs" secondAttribute="bottom" id="Iy8-aS-Yo4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="reviewContentLabel" destination="J9L-iy-5lr" id="oeX-jw-Zf7"/>
+                                            <outlet property="reviewHeadlineLabel" destination="sRz-PD-aL4" id="DU8-uj-ttv"/>
+                                            <outlet property="reviewerLabel" destination="exm-D4-Knd" id="CJp-6N-xir"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -247,18 +254,28 @@
                                     <segue destination="7ZT-bI-Rbw" kind="presentation" id="vPK-Oz-8ZS"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Delete" id="okK-Qu-QPb"/>
+                            <barButtonItem title="Delete" id="okK-Qu-QPb">
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="HbI-9h-wKv" id="QkI-Nh-vCk"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="authorNameLabel" destination="fwT-Q7-CIh" id="1Ih-vH-iCR"/>
+                        <outlet property="bookReviewsTableView" destination="K9W-JC-3G5" id="vUz-MG-NVv"/>
+                        <outlet property="bookTitleLabel" destination="3ye-Lo-Nxn" id="l8s-B6-Pcz"/>
+                        <outlet property="publisherLabel" destination="cxm-Ch-6gR" id="uYe-dF-N1k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sb-pM-Fmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="-390.40178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="cGL-1l-P9o">
             <objects>
-                <viewController id="7ZT-bI-Rbw" sceneMemberID="viewController">
+                <viewController id="7ZT-bI-Rbw" customClass="ReviewViewController" customModule="Bookr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gEl-sg-aMB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,9 +283,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml9-NX-vMh">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="QvR-pt-RO3"/>
+                                    <barButtonItem systemItem="cancel" id="QvR-pt-RO3">
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="7ZT-bI-Rbw" id="9Ir-dV-eRt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RCq-dp-um4"/>
-                                    <barButtonItem title="Submit" id="XjS-4Z-8Br"/>
+                                    <barButtonItem title="Submit" id="XjS-4Z-8Br">
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="7ZT-bI-Rbw" id="Z5x-vl-G83"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAp-Ly-fdx">
@@ -333,6 +358,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o8O-r0-iRs"/>
                     </view>
+                    <connections>
+                        <outlet property="headlineTextField" destination="4gp-gb-bIZ" id="zdv-rp-dqd"/>
+                        <outlet property="reviewContentTextView" destination="tQJ-dg-Jxg" id="uaS-fg-dlM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZS-K3-E8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
