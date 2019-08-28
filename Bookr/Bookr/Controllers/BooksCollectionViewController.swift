@@ -35,7 +35,13 @@ class BooksCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.book = bookFor(indexPath: indexPath)
+        
         return cell
+    }
+    
+    func bookFor(indexPath: IndexPath) -> Book {
+        return bookController.books[indexPath.item]
     }
 
 }
