@@ -13,8 +13,9 @@ class BookDetailViewController: UIViewController {
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
-    
     @IBOutlet weak var bookReviewsTableView: UITableView!
+    
+    var bookController: BookController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

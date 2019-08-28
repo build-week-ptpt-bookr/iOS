@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,7 +124,7 @@
                                 <connections>
                                     <outlet property="bookImageView" destination="wIL-Td-azd" id="qum-69-yf4"/>
                                     <outlet property="bookTitleLabel" destination="uG2-Z0-deL" id="rYh-40-i4S"/>
-                                    <segue destination="HbI-9h-wKv" kind="show" id="kda-Nj-li2"/>
+                                    <segue destination="HbI-9h-wKv" kind="show" identifier="ShowBookDetailsSegue" id="kda-Nj-li2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
