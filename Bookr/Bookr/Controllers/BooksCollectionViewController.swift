@@ -20,8 +20,12 @@ class BooksCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowBookDetailsSegue" {
-            guard let destinationVC = segue.destination as? BookDetailViewController else { return }
+            guard let bookIndex = collectionView.indexPathsForSelectedItems?.first?.item, let destinationVC = segue.destination as? BookDetailViewController else { return }
+            
             destinationVC.bookController = bookController
+            
+            let book = bookController.books[bookIndex]
+            destinationVC.book = book
         }
     }
 
