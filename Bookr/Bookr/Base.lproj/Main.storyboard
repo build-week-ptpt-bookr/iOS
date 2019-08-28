@@ -168,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="246.5" width="414" height="566.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="anotherTemporaryReuseIdentifierChangeMe" rowHeight="70" id="YkV-eJ-esR" customClass="BookReviewTableViewCell" customModule="Bookr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" rowHeight="70" id="YkV-eJ-esR" customClass="BookReviewTableViewCell" customModule="Bookr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YkV-eJ-esR" id="1Jk-vm-x5x">
@@ -257,8 +257,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="authorNameLabel" destination="fwT-Q7-CIh" id="1Ih-vH-iCR"/>
-                        <outlet property="bookReviewsTableView" destination="K9W-JC-3G5" id="vUz-MG-NVv"/>
                         <outlet property="bookTitleLabel" destination="3ye-Lo-Nxn" id="l8s-B6-Pcz"/>
+                        <outlet property="tableView" destination="K9W-JC-3G5" id="vUz-MG-NVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sb-pM-Fmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml9-NX-vMh">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="cancel" id="QvR-pt-RO3">
                                         <connections>
@@ -296,7 +296,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SDx-gK-uUJ">
-                                <rect key="frame" x="20" y="158" width="374" height="635"/>
+                                <rect key="frame" x="20" y="158" width="374" height="640"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G2m-CK-u6v">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="58.5"/>
@@ -316,7 +316,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uHu-AF-OeL">
-                                        <rect key="frame" x="0.0" y="78.5" width="374" height="556.5"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="374" height="561.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KED-y4-6Be">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -325,7 +325,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tQJ-dg-Jxg">
-                                                <rect key="frame" x="0.0" y="28.5" width="374" height="528"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="374" height="533"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
