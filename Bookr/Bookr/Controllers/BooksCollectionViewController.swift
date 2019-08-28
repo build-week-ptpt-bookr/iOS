@@ -11,20 +11,33 @@ import UIKit
 class BooksCollectionViewController: UICollectionViewController {
     
     let bookController = BookController()
+    private let apiController = APIController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if apiController.bearer == nil {
+            performSegue(withIdentifier: "toMain", sender: self)
+            //inject dependencies
+            
+        }
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMain" {
+            if let loginVC = segue.destination as? LoginViewController {
+                loginVC.apiController = apiController
+            }
+        }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
     

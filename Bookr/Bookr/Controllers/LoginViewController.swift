@@ -10,11 +10,21 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    enum LoginType {
+        case signUp
+        case signIn
+    }
+    
+    
     let loginButton = UIButton()
     let signUpButton = UIButton()
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
+    let toggle = UISegmentedControl()
+    
+    var apiController: APIController?
+    var loginType = LoginType.signUp
     
 
     override func viewDidLoad() {
@@ -22,7 +32,7 @@ class LoginViewController: UIViewController {
         setupLayout()
         usernameTextField.delegate = self
         
-        // Do any additional setup after loading the view.
+      
     }
     
     func setupLayout() {
@@ -32,6 +42,21 @@ class LoginViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        //Login/SignUp Toggle
+//        toggle.setTitle("Log In", forSegmentAt: 0)
+//        toggle.setTitle("Sign Up", forSegmentAt: 1)
+//        view.addSubview(toggle)
+//        toggle.layer.cornerRadius = 8.0
+//        toggle.translatesAutoresizingMaskIntoConstraints = false
+//        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        signUpButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 75).isActive = true
+//        toggle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        toggle.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        toggle.backgroundColor = .red
+//        toggle.widthAnchor.constraint(equalToConstant: 250).isActive = true
+//        toggle.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
        
         // Login Button
         loginButton.title(for: .normal)
@@ -101,27 +126,23 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "toMain", sender: self)
             }
         }
-        //
-       
-        
-        //Performs Segue to SettingsSB for testing. Will go to Main screen when it is built.
-//        let acctUser = ["username":user]
-//        let userPass = ["password":pass]
-//       performSegue(withIdentifier: "toMain", sender: sender)
- 
-    
-    }
-    // TODO: - Create network call that adds user into back in and log them in
-    @objc func signUpButtonTapped(sender: UIButton) {
-        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
-        
-        if user.isEmpty || pass.isEmpty {
-            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
-        }
-        
-    }
-    
 
+    
+    
+    }
+
+    func signInTypeChanged() {
+        if toggle.selectedSegmentIndex == 0 {
+            // 0 is equal to sign up
+            loginType == .signUp
+            loginButton.setTitle("Sign Up", for: .normal)
+        } else {
+            // 1 is equal to sign in
+            loginType == .signIn
+        }
+    }
+    
+    // Alert code that alerts user of something. Input params title and message
     func alertMessage(title: String, message: String) {
         
          let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
