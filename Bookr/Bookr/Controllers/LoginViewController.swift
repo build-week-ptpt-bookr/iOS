@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     let toggle = UISegmentedControl(items: ["Sign Up", "Log In"])
     
     var apiController: APIController?
-    var loginType = LoginType.signUp
+    var loginType = LoginType.signIn
     
 
     override func viewDidLoad() {
@@ -105,8 +105,8 @@ class LoginViewController: UIViewController {
     }
  
     // TODO: - Create network call up to API to check if user has account and login if yes.
-    @objc func loginButtonTapped(sender: UIButton) {
-        guard let apiController = apiController else { return }
+    @objc func loginButtonTapped(_ sender: UIButton) {
+        guard let api = apiController else { return }
         guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
     
         if username.isEmpty || password.isEmpty {
@@ -118,9 +118,9 @@ class LoginViewController: UIViewController {
             usernameTextField.text = ""
         }
 
-        let user = User(id: 1, username: username, password: password, roles: nil, token: "token")
+        let user = User(id: <#T##Int#>, username: <#T##String#>, password: <#T##String#>, roles: <#T##[String]?#>, token: <#T##String?#>)
         if loginType == .signUp {
-            apiController.signUp(with: user) {error in
+            api.signUp(with: user) {error in
                 if let error = error {
                     print("Error occured during sign up: \(error)")
                 } else {
@@ -129,7 +129,6 @@ class LoginViewController: UIViewController {
                         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
-//                        let user = User(id: 1, username: username, password: password, roles: nil, token: "token")
                         self.loginType = .signIn
                         
                         self.loginButton.setTitle("Log In", for: .normal)
@@ -138,12 +137,12 @@ class LoginViewController: UIViewController {
                 }
             }
           } else {
-            apiController.signIn(with: user) { error in
+            api.signIn(with: user) { error in
                 if let error = error {
                     print("Error occured during sign up: \(error)")
                 } else {
                     DispatchQueue.main.async {
-                        shouldPerformSegue(withIdentifier: "toMain", sender:  )
+                        self.performSegue(withIdentifier: "toMain", sender: self)
                     }
                   }
                 }

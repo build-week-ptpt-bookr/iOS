@@ -19,10 +19,8 @@ class BooksCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if apiController.bearer == nil {
+        if apiController.user == nil {
             performSegue(withIdentifier: "toMain", sender: self)
-            //inject dependencies
-            
         }
     }
 

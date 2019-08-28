@@ -20,7 +20,6 @@
 		D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E3230E3E1500AC3750 /* SettingsViewController.swift */; };
 		D73162E6230E473B00AC3750 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */; };
 		D76AB05623160282005480B8 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76AB05523160282005480B8 /* APIController.swift */; };
-		D76AB058231607CE005480B8 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76AB057231607CE005480B8 /* Bearer.swift */; };
 		D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89477230F49BA00633A6F /* SettingsModel.swift */; };
 		D7F8947E230F762500633A6F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8947D230F762500633A6F /* Book.swift */; };
 		D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89481230F836E00633A6F /* LoginViewController.swift */; };
@@ -47,7 +46,6 @@
 		D73162E3230E3E1500AC3750 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D73162E5230E473B00AC3750 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D76AB05523160282005480B8 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
-		D76AB057231607CE005480B8 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		D7F89477230F49BA00633A6F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D7F8947D230F762500633A6F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D7F89481230F836E00633A6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				2929D68F230F7590006E7D0B /* Review.swift */,
 				2952573C2314C65700D34F73 /* User.swift */,
 				D7F8947D230F762500633A6F /* Book.swift */,
-				D76AB057231607CE005480B8 /* Bearer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,7 +243,6 @@
 				2952573D2314C65700D34F73 /* User.swift in Sources */,
 				D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */,
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
-				D76AB058231607CE005480B8 /* Bearer.swift in Sources */,
 				D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */,
 				D73162E4230E3E1500AC3750 /* SettingsViewController.swift in Sources */,
 				D76AB05623160282005480B8 /* APIController.swift in Sources */,

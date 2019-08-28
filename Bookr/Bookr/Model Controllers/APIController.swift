@@ -27,7 +27,7 @@ class APIController {
     // TODO: - Create network call that adds user into back in and log them in
     
     private let baseUrl =  URL(string: "https://lambda-bookr.herokuapp.com/api")!
-    var bearer: Bearer?
+    var user: User?
     
     //create fucntion for sign up
     func signUp(with user: User, completion: @escaping (Error?) -> ()) {
@@ -61,7 +61,7 @@ class APIController {
     }
     
     // create function for sign in
-    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
+    func signIn(with user: loginUser, completion: @escaping (Error?) -> ()) {
         let signInUrl = baseUrl.appendingPathComponent("auth/login")
         var request = URLRequest(url: signInUrl)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -94,7 +94,7 @@ class APIController {
             
             let decoder = JSONDecoder()
             do {
-                self.bearer = try decoder.decode(Bearer.self, from: data)
+                self.user = try decoder.decode(User.self, from: data)
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)
@@ -106,5 +106,5 @@ class APIController {
     }
     
     
-    // create function for fetching all users
+
 }
