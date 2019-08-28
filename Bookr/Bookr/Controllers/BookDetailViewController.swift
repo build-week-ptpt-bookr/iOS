@@ -12,17 +12,21 @@ class BookDetailViewController: UIViewController {
     
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
-    @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var bookReviewsTableView: UITableView!
     
     var bookController: BookController?
+    var book: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
+    func updateViews() {
+        guard let book = book else { return }
+        bookTitleLabel.text = book.title
+        authorNameLabel.text = book.authors.first
+    }
 
     /*
     // MARK: - Navigation
