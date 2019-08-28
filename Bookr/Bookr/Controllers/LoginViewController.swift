@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
     
+    var user: User?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,18 +98,13 @@ class LoginViewController: UIViewController {
         if user.contains(" ") {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
-        }else {
+        } else {
             DispatchQueue.main.async {
+                user.
                 self.performSegue(withIdentifier: "toMain", sender: self)
             }
         }
-        //
-       
-        
-        //Performs Segue to SettingsSB for testing. Will go to Main screen when it is built.
-//        let acctUser = ["username":user]
-//        let userPass = ["password":pass]
-//       performSegue(withIdentifier: "toMain", sender: sender)
+
  
     
     }
