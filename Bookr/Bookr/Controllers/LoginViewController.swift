@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    
     let loginButton = UIButton()
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let usernameTextField = UITextField()
@@ -58,20 +59,7 @@ class LoginViewController: UIViewController {
         loginButton.backgroundColor = .red
         loginButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        // Sign Up Button
-        signUpButton.title(for: .normal)
-        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        signUpButton.setTitle("Sign Up", for: .normal)
-        view.addSubview(signUpButton)
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        signUpButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 75).isActive = true
-        signUpButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        signUpButton.backgroundColor = .red
-        signUpButton.isHidden = true
-        
+       
         
         // textView For Username
         view.addSubview(usernameTextField)
@@ -101,22 +89,23 @@ class LoginViewController: UIViewController {
  
     // TODO: - Create network call up to API to check if user has account and login if yes.
     @objc func loginButtonTapped(sender: UIButton) {
-        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
+        guard let pass = passwordTextField.text, let user = usernameTextField.text, let netcall = networkController else { return }
         
-        guard let netcall = networkController else {return}
+    
         if user.isEmpty || pass.isEmpty {
             alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
         } else if user.contains(" ") {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         } else if loginType == .signUp {
-            netcall.
+            netcall.sendPost()
+            alertMessage(title: "Account Created", message: "Press OK to sign in.")
             
-        } else if {
-            DispatchQueue.main.async {
-                netcall.sendPost()
-                self.performSegue(withIdentifier: "toMain", sender: self)
-            }
+//        } else if {
+//            DispatchQueue.main.async {
+//                netcall.sendPost()
+//                self.performSegue(withIdentifier: "toMain", sender: self)
+//            }
         }
     }
     // TODO: - Create network call that adds user into back in and log them in
@@ -145,6 +134,19 @@ class LoginViewController: UIViewController {
             if let vc = segue.destination as? SettingsViewController { 
                 vc.delegate = self as? LoginDelegate
             }
+        }
+    }
+    
+    
+    @objc func signInTypeChanged() {
+        if toggle.selectedSegmentIndex == 0 {
+            // 0 is equal to sign up
+            loginType = .signUp
+            loginButton.setTitle("Sign Up", for: .normal)
+        } else {
+            // 1 is equal to sign in
+            loginType = .signIn
+            loginButton.setTitle("Log In", for: .normal)
         }
     }
     

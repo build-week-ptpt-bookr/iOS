@@ -24,3 +24,8 @@ struct User: Codable {
         self.roles = roles
     }
 }
+
+        enum LoginType {
+            case signUp
+            case signIn
+    }

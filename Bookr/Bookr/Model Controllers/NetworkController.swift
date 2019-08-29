@@ -11,6 +11,7 @@ import Foundation
 class NetworkController {
   
     var user: User?
+    let login = LoginViewController()
     
     func sendPost() {
     
@@ -23,7 +24,11 @@ class NetworkController {
         do {
             let jsonBody = try JSONEncoder().encode(newPost)
             request.httpBody = jsonBody
-        } catch {}
+        } catch {
+            print("Unexpected error: \(error)")
+            login.alertMessage(title: "Error", message: "It looks like there was an error proccessing. Try again later.")
+            return
+        }
         
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, _, _) in
@@ -37,11 +42,11 @@ class NetworkController {
         
     }
     
-    func downloadJSONPost(completed: @escaping () -> ()) {
+    func Get(completed: @escaping () -> ()) {
         
-        let url = URL(string: "https://lambda-bookr.herokuapp.com/api/auth/login")
+        guard let url = URL(string: "https://lambda-bookr.herokuapp.com/api/auth/login") else {return}
         
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if error == nil {
                 do {
