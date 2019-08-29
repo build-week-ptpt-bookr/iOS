@@ -23,9 +23,16 @@ struct User: Codable {
         self.password = password
         self.roles = roles
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case userId = "userId"
+        case username = "username"
+        case password = "password"
+        case roles = "roles"
+        case token = "token"
+        
+    }
 }
 
-struct loginUser: Codable {
-    var username: String
-    var password: String
-}
+

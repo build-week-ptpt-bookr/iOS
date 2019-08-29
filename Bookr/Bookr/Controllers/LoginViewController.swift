@@ -22,7 +22,8 @@ class LoginViewController: UIViewController {
     let passwordTextField = UITextField()
     let toggle = UISegmentedControl(items: ["Sign Up", "Log In"])
     
-    var apiController: APIController?
+//    var apiController: APIController?
+    var apiController = APIController()
     var loginType = LoginType.signIn
     
 
@@ -97,7 +98,7 @@ class LoginViewController: UIViewController {
     
     // Alert code that alerts user of something. Input params title and message
     func alertMessage(title: String, message: String) {
-        
+ 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true)
@@ -106,7 +107,7 @@ class LoginViewController: UIViewController {
  
     // TODO: - Create network call up to API to check if user has account and login if yes.
     @objc func loginButtonTapped(_ sender: UIButton) {
-        guard let api = apiController else { return }
+        let api = apiController
         guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
     
         if username.isEmpty || password.isEmpty {
@@ -117,8 +118,8 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
-
-        let user = User(id: <#T##Int#>, username: <#T##String#>, password: <#T##String#>, roles: <#T##[String]?#>, token: <#T##String?#>)
+        let user = User(id: 2, username: username, password: password, roles: ["user"], token: nil)
+        
         if loginType == .signUp {
             api.signUp(with: user) {error in
                 if let error = error {
@@ -132,6 +133,7 @@ class LoginViewController: UIViewController {
                         self.loginType = .signIn
                         
                         self.loginButton.setTitle("Log In", for: .normal)
+                        self.clearTextFields()
                         })
                     }
                 }
@@ -142,6 +144,7 @@ class LoginViewController: UIViewController {
                     print("Error occured during sign up: \(error)")
                 } else {
                     DispatchQueue.main.async {
+                        self.clearTextFields()
                         self.performSegue(withIdentifier: "toMain", sender: self)
                     }
                   }
@@ -162,7 +165,10 @@ class LoginViewController: UIViewController {
         }
     }
     
- 
+    func clearTextFields() {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+    }
     
     // MARK: - Navigation
     // Segue Information to

@@ -61,7 +61,7 @@ class APIController {
     }
     
     // create function for sign in
-    func signIn(with user: loginUser, completion: @escaping (Error?) -> ()) {
+    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
         let signInUrl = baseUrl.appendingPathComponent("auth/login")
         var request = URLRequest(url: signInUrl)
         request.httpMethod = HTTPMethod.post.rawValue
