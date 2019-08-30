@@ -20,7 +20,6 @@ class BooksCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
     }
-    
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,11 +27,8 @@ class BooksCollectionViewController: UICollectionViewController {
         
     }
 
-    
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMain" {
             if let loginVC = segue.destination as? LoginViewController {
@@ -40,7 +36,6 @@ class BooksCollectionViewController: UICollectionViewController {
             }
         }
     }
- 
 
     // MARK: UICollectionViewDataSource
     
@@ -51,7 +46,13 @@ class BooksCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.book = bookFor(indexPath: indexPath)
+        
         return cell
+    }
+    
+    func bookFor(indexPath: IndexPath) -> Book {
+        return bookController.books[indexPath.item]
     }
 
 }

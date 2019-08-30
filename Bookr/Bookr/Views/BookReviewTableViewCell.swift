@@ -13,16 +13,20 @@ class BookReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewHeadlineLabel: UILabel!
     @IBOutlet weak var reviewerLabel: UILabel!
     @IBOutlet weak var reviewContentLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    var review: Review? {
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func updateViews() {
+        guard let review = review else { return }
+        
+        reviewHeadlineLabel.text = review.title
+        reviewerLabel.text = review.username
+        reviewContentLabel.text = review.comment
+        
     }
 
 }
