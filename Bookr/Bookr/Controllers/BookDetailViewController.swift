@@ -12,16 +12,23 @@ class BookDetailViewController: UIViewController {
     
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
-    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var bookReviewsTableView: UITableView!
+    var bookController: BookController?
+    var book: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        
+        updateViews()
     }
     
+    func updateViews() {
+        guard let book = book else { return }
+        bookTitleLabel.text = book.title
+        authorNameLabel.text = book.authors.first
+    }
 
     /*
     // MARK: - Navigation
@@ -37,4 +44,21 @@ class BookDetailViewController: UIViewController {
     }
     
 
+}
+
+extension BookDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let book = book else { return 0 }
+        return book.reviews?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? BookReviewTableViewCell else { return UITableViewCell() }
+        
+        cell.review = book?.reviews?[indexPath.row]
+        
+        return cell
+    }
+    
 }

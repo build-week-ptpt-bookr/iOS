@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LoginDelegate {
-    func userAttemptedToLogIn(_:[String:String])
+    func userAttemptedToLogIn(_:User)
 }
