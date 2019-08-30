@@ -70,23 +70,26 @@ class APIController {
     func signIn(with user: User, completion: @escaping (Error?) -> ()) {
         let signInUrl = baseUrl.appendingPathComponent("auth/login")
         var request = URLRequest(url: signInUrl)
-        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let jsonEncoder = JSONEncoder()
+        
         do {
+            let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
-           
+            print(String(data: jsonData, encoding: .utf8)!)
+            jsonEncoder.outputFormatting = .prettyPrinted
         } catch {
-            
+            print("Error encoding user object: \(error)")
             completion(error)
             return
         }
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                print(response.statusCode)
                 return
             }
             if let error = error {
@@ -101,11 +104,11 @@ class APIController {
             
             let decoder = JSONDecoder()
             do {
+               
                 self.user = try decoder.decode(User.self, from: data)
                 print(user.username)
-                
             } catch {
-                
+                print("Error encoding user object: \(error)")
                 completion(error)
                 return
             }
@@ -113,10 +116,4 @@ class APIController {
             completion(nil)
             }.resume()
     }
-    
-    func getBooks(with book: Book, completion: @escaping (Error?) -> ()) {
- 
-        
-
-}
 }
