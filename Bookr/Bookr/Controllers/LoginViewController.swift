@@ -118,10 +118,10 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
-        let user = User(id: 2, username: username, password: password, roles: ["user"], token: nil)
+        let user = User(id: 55, username: username, password: password, roles: ["user"], token: nil)
         
         if loginType == .signUp {
-            api.signUp(with: user) {error in
+            api.signUp(with: user) { error in
                 if let error = error {
                     print("Error occured during sign up: \(error)")
                 } else {
@@ -130,18 +130,18 @@ class LoginViewController: UIViewController {
                         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: {
-                        self.loginType = .signIn
+                            self.loginType = .signIn
+                            self.loginButton.setTitle("Log In", for: .normal)
+                            self.clearTextFields()
                         
-                        self.loginButton.setTitle("Log In", for: .normal)
-                        self.clearTextFields()
                         })
                     }
                 }
             }
-          } else {
+          } else if loginType == .signIn {
             api.signIn(with: user) { error in
                 if let error = error {
-                    print("Error occured during sign up: \(error)")
+                    print("Error occured during sign in: \(error)")
                 } else {
                     DispatchQueue.main.async {
                         self.clearTextFields()
@@ -156,10 +156,12 @@ class LoginViewController: UIViewController {
     @objc func signInTypeChanged() {
         if toggle.selectedSegmentIndex == 0 {
             // 0 is equal to sign up
+            print("Sign UP")
             loginType = .signUp
             loginButton.setTitle("Sign Up", for: .normal)
         } else {
             // 1 is equal to sign in
+            print("Sign IN")
             loginType = .signIn
             loginButton.setTitle("Log In", for: .normal)
         }

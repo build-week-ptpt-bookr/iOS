@@ -24,9 +24,9 @@ enum NetworkError: Error {
 
 class APIController {
     
-    // TODO: - Create network call that adds user into back in and log them in
+    // MARK: - Sign UP
     
-    private let baseUrl =  URL(string: "https://lambda-bookr.herokuapp.com/api")!
+    private let baseUrl =  URL(string: "https://lambda-bookr.herokuapp.com/api/")!
     var user: User?
     
     //create fucntion for sign up
@@ -59,7 +59,7 @@ class APIController {
             completion(nil)
         }.resume()
     }
-    
+    // MARK: - Sign IN
     // create function for sign in
     func signIn(with user: User, completion: @escaping (Error?) -> ()) {
         let signInUrl = baseUrl.appendingPathComponent("auth/login")
@@ -71,6 +71,7 @@ class APIController {
         do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
+           
         } catch {
             print("Error encoding user object: \(error)")
             completion(error)
@@ -94,7 +95,9 @@ class APIController {
             
             let decoder = JSONDecoder()
             do {
+                let decoder = JSONDecoder()
                 self.user = try decoder.decode(User.self, from: data)
+                print(user.username)
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)
