@@ -10,9 +10,9 @@ import Foundation
 
 struct User: Codable {
     var id: Int
-    var userId: Int
+    var userId: Int?
     var username: String
-    var password: String
+    var password: String?
     var roles: [String]?
     var token: String?
     
@@ -23,4 +23,16 @@ struct User: Codable {
         self.password = password
         self.roles = roles
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case userId = "userId"
+        case username = "username"
+        case password = "password"
+        case roles = "roles"
+        case token = "token"
+
+    }
 }
+
+
