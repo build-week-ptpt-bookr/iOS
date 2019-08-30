@@ -60,8 +60,6 @@ class APIController {
                 print(String(response.statusCode))
             }
         
-            
-            
             completion(nil)
         }.resume()
     }
@@ -76,7 +74,7 @@ class APIController {
         
         do {
             let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(user)
+            let jsonData = try jsonEncoder.encode(self.user)
             request.httpBody = jsonData
             print(String(data: jsonData, encoding: .utf8)!)
             jsonEncoder.outputFormatting = .prettyPrinted
@@ -101,12 +99,13 @@ class APIController {
                 completion(NSError())
                 return
             }
-            
+            print(data)
             let decoder = JSONDecoder()
             do {
-               
-                self.user = try decoder.decode(User.self, from: data)
-                print(user.username)
+                var newUser: User
+                newUser = try decoder.decode(User.self, from: data)
+                self.user = newUser
+                
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)

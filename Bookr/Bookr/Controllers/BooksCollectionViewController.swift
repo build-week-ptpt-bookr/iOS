@@ -19,8 +19,13 @@ class BooksCollectionViewController: UICollectionViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-       bookController.loadBooks(with: booksToken)
+      
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+         bookController.loadBooks(with: booksToken)
     }
 
 
@@ -55,4 +60,14 @@ class BooksCollectionViewController: UICollectionViewController {
     
 
 
+}
+
+extension BooksCollectionViewController: LoginDelegate {
+    func userAttemptedToLogIn(_ user: User) {
+        guard let token = user.token else {return}
+        booksToken = token
+        print(booksToken)
+    }
+    
+    
 }

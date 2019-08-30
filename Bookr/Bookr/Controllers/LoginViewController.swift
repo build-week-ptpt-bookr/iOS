@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
     @objc func loginButtonTapped(_ sender: UIButton) {
         let api = apiController
         guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
-        let user = User(id: 59, username: username, password: password, roles: ["user"], token: "100")
+//        let user = User(id: 59, username: username, password: password, roles: ["user"], token: "100")
         if username.isEmpty || password.isEmpty {
             alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
         }
@@ -117,10 +117,15 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
+        if let user = api.user {
+            api.user?.password = password
+            api.user?.username = username
+        }
+        
         
         
         if loginType == .signUp {
-            api.signUp(with: user) { error in
+            api.signUp(user) { error in
                 if let error = error {
                     print("Error occured during sign up: \(error)")
                 } else {
@@ -138,7 +143,7 @@ class LoginViewController: UIViewController {
                 }
             }
           } else if loginType == .signIn {
-            api.signIn(with: user) { error in
+            api.signIn() { error in
                 if let error = error {
                     print("Error occured during sign in: \(error)")
                 } else {
@@ -174,12 +179,11 @@ class LoginViewController: UIViewController {
     // Segue Information to
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMain" {
-            if let vc = segue.destination as? BooksCollectionViewController { 
-                vc.delegate = self as? LoginDelegate
-                if let token = apiController.user?.token {
-                    vc.booksToken = token
-                    }
-                }
+            guard let vc = segue.destination as? BooksCollectionViewController else { return }
+             
+                 vc.delegate = self as? LoginDelegate
+            
+            
             }
         }
     
