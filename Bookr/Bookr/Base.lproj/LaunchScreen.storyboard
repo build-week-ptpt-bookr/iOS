@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookShelf" translatesAutoresizingMaskIntoConstraints="NO" id="2tg-27-2iD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2tg-27-2iD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fP-rU-8Qd"/>
+                            <constraint firstItem="2tg-27-2iD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OMA-65-dFR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2tg-27-2iD" secondAttribute="trailing" id="TJ4-Tg-cp1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2tg-27-2iD" secondAttribute="bottom" id="njo-mn-Tgd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BookShelf" width="1295" height="2212"/>
+    </resources>
 </document>

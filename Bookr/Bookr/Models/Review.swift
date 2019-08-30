@@ -18,14 +18,14 @@ struct Review: Codable {
     var rating: Double?
     var comment: String?
     
-//    init(id: Int, reviewId: Int, title: String, username: String, bookID: Int, userID: Int, rating: Double, comment: String) {
-//        self.id = id
-//        self.reviewID = reviewId
-//        self.title = title
-//        self.username = username
-//        self.bookId = bookID
-//        self.userId = userID
-//        self.rating = rating
-//        self.comment = comment
-//    }
+    init(id: Int, reviewId: Int, title: String, username: String, bookID: Int, userID: Int, rating: Double, comment: String) {
+        self.id = id
+        self.reviewID = reviewId
+        self.title = title
+        self.username = username
+        self.bookId = bookID
+        self.userId = userID
+        self.rating = rating
+        self.comment = comment
+    }
 }
