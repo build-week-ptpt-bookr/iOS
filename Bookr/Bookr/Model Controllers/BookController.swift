@@ -17,7 +17,7 @@ class BookController {
         
         let bookUrl = baseUrl.appendingPathComponent("books/:id")
         var request = URLRequest(url: bookUrl)
-        request.httpMethod = HTTPMethod.get.rawValue
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let jsonEncoder = JSONEncoder()
