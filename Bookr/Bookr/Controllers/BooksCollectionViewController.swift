@@ -11,10 +11,10 @@ import UIKit
 class BooksCollectionViewController: UICollectionViewController {
     
     let bookController = BookController()
-    private let apiController = APIController()
+    let apiController = APIController()
     
     var delegate: LoginDelegate?
-    
+    var bookToken = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,4 +55,15 @@ class BooksCollectionViewController: UICollectionViewController {
         return bookController.books[indexPath.item]
     }
 
+}
+
+
+extension BooksCollectionViewController: LoginDelegate {
+    func userAttemptedToLogIn(_ user: User) {
+        if let token = user.token {
+            bookToken = token
+        }
+    }
+    
+    
 }
