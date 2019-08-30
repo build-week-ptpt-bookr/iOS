@@ -16,13 +16,13 @@ struct User: Codable {
     var roles: [String]?
     var token: String?
     
-//    init(id: Int, username: String, password: String, roles: [String]?, token: String?) {
-//        self.id = id
-//        self.userId = id
-//        self.username = username
-//        self.password = password
-//        self.roles = roles
-//    }
+    init(id: Int, username: String, password: String, roles: [String]?, token: String?) {
+        self.id = id
+        self.userId = id
+        self.username = username
+        self.password = password
+        self.roles = roles
+   }
     
     private enum CodingKeys: String, CodingKey {
         case id = "id"
