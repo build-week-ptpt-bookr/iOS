@@ -176,7 +176,7 @@ class LoginViewController: UIViewController {
     // Segue Information to
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMain" {
-            if let vc = segue.destination as? SettingsViewController { 
+            if let vc = segue.destination as? BooksCollectionViewController { 
                 vc.delegate = self as? LoginDelegate
                 }
             }

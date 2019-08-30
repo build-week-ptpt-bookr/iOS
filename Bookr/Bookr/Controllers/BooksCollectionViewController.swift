@@ -12,18 +12,23 @@ class BooksCollectionViewController: UICollectionViewController {
     
     let bookController = BookController()
     private let apiController = APIController()
+    
+    var delegate: LoginDelegate?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if apiController.user == nil {
-            performSegue(withIdentifier: "toMain", sender: self)
-        }
+ 
+        
     }
 
+    
     
     // MARK: - Navigation
 

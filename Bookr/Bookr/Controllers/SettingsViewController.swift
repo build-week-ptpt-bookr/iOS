@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
 
-    var delegate: LoginDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
