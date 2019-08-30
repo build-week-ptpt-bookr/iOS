@@ -11,21 +11,19 @@ import UIKit
 class BooksCollectionViewController: UICollectionViewController {
     
     let bookController = BookController()
-    private let apiController = APIController()
+    let apiController = APIController()
+    
     
     var delegate: LoginDelegate?
-    
-
+    var booksToken = ""
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
- 
+       bookController.loadBooks(with: booksToken)
         
     }
+
+
 
     // MARK: - Navigation
     
@@ -40,7 +38,7 @@ class BooksCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookController.books.count
+    return bookController.books.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,5 +52,7 @@ class BooksCollectionViewController: UICollectionViewController {
     func bookFor(indexPath: IndexPath) -> Book {
         return bookController.books[indexPath.item]
     }
+    
+
 
 }

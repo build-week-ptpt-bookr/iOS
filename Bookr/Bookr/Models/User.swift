@@ -22,6 +22,7 @@ struct User: Codable {
         self.username = username
         self.password = password
         self.roles = roles
+        self.token = token
     }
     
     private enum CodingKeys: String, CodingKey {

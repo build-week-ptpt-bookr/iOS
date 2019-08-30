@@ -20,9 +20,8 @@ class LoginViewController: UIViewController {
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
-    let toggle = UISegmentedControl(items: ["Sign Up", "Log In"])
-    
-//    var apiController: APIController?
+    let toggle = UISegmentedControl(items: ["sign up", "log in"])
+    var bookController = BookController()
     var apiController = APIController()
     var loginType = LoginType.signIn
     
@@ -59,7 +58,7 @@ class LoginViewController: UIViewController {
         // Login Button
         loginButton.title(for: .normal)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        loginButton.setTitle("Log In", for: .normal)
+        loginButton.setTitle("log in", for: .normal)
         view.addSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -74,7 +73,7 @@ class LoginViewController: UIViewController {
         view.addSubview(usernameTextField)
         
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.placeholder = "Enter Username Here"
+        usernameTextField.placeholder = "Enter username here"
         usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
         usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -85,7 +84,7 @@ class LoginViewController: UIViewController {
         // Password TextView
         view.addSubview(passwordTextField)
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder = "Enter Password Here"
+        passwordTextField.placeholder = "enter password here"
         passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -109,7 +108,7 @@ class LoginViewController: UIViewController {
     @objc func loginButtonTapped(_ sender: UIButton) {
         let api = apiController
         guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
-    
+        let user = User(id: 55, username: username, password: password, roles: ["user"], token: "99")
         if username.isEmpty || password.isEmpty {
             alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
         }
@@ -118,7 +117,7 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
-        let user = User(id: 55, username: username, password: password, roles: ["user"], token: nil)
+        
         
         if loginType == .signUp {
             api.signUp(with: user) { error in
@@ -146,6 +145,7 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.clearTextFields()
                         self.performSegue(withIdentifier: "toMain", sender: self)
+                        
                     }
                   }
                 }
@@ -156,12 +156,10 @@ class LoginViewController: UIViewController {
     @objc func signInTypeChanged() {
         if toggle.selectedSegmentIndex == 0 {
             // 0 is equal to sign up
-            print("Sign UP")
             loginType = .signUp
             loginButton.setTitle("Sign Up", for: .normal)
         } else {
             // 1 is equal to sign in
-            print("Sign IN")
             loginType = .signIn
             loginButton.setTitle("Log In", for: .normal)
         }
@@ -178,6 +176,9 @@ class LoginViewController: UIViewController {
         if segue.identifier == "toMain" {
             if let vc = segue.destination as? BooksCollectionViewController { 
                 vc.delegate = self as? LoginDelegate
+                if let token = apiController.user?.token {
+                    vc.booksToken = token
+                    }
                 }
             }
         }
