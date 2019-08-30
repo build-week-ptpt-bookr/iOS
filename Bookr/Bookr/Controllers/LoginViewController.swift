@@ -80,6 +80,7 @@ class LoginViewController: UIViewController {
         usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         usernameTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
         usernameTextField.backgroundColor = .lightGray
+        usernameTextField.autocapitalizationType = .none
 
         
         // Password TextView
@@ -107,7 +108,7 @@ class LoginViewController: UIViewController {
  
     // TODO: - Create network call up to API to check if user has account and login if yes.
     @objc func loginButtonTapped(_ sender: UIButton) {
-        let api = apiController
+//        let api = apiController
         guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
     
         if username.isEmpty || password.isEmpty {
@@ -118,13 +119,14 @@ class LoginViewController: UIViewController {
             alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
             usernameTextField.text = ""
         }
-        let user = User(id: 55, username: username, password: password, roles: ["user"], token: nil)
+        //let user = User(id: 55, username: username, password: password, roles: ["user"], token: nil)
         
         if loginType == .signUp {
-            api.signUp(with: user) { error in
+            apiController.signUp(with: username, password: password) { error in
                 if let error = error {
                     print("Error occured during sign up: \(error)")
                 } else {
+                    
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(title: "Sign Up Successful", message: "Now Please log in.", preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -139,7 +141,7 @@ class LoginViewController: UIViewController {
                 }
             }
           } else if loginType == .signIn {
-            api.signIn(with: user) { error in
+            apiController.LogIn(with: username, password: password) { error in
                 if let error = error {
                     print("Error occured during sign in: \(error)")
                 } else {

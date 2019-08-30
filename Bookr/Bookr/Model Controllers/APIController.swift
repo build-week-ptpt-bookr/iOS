@@ -28,18 +28,21 @@ class APIController {
     
     private let baseUrl =  URL(string: "https://lambda-bookr.herokuapp.com/api/")!
     var user: User?
+    var loginUser: Login?
+    var registerUser: Login?
     
     //create fucntion for sign up
-    func signUp(with user: User, completion: @escaping (Error?) -> ()) {
+    func signUp(with username: String, password: String, completion: @escaping (Error?) -> ()) {
         let signUpUrl = baseUrl.appendingPathComponent("auth/register")
         var request = URLRequest(url: signUpUrl)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        registerUser = Login(username: username, password: password)
         let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(user)
+            let jsonData = try jsonEncoder.encode(registerUser)
             request.httpBody = jsonData
+            print(jsonData.prettyPrintedJSONString!)
         } catch {
             print("Error encoding user object: \(error)")
             completion(error)
@@ -47,7 +50,7 @@ class APIController {
         }
         URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -61,7 +64,8 @@ class APIController {
     }
     // MARK: - Sign IN
     // create function for sign in
-    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
+    func LogIn(with username: String, password: String, completion: @escaping (Error?) -> ()) {
+        loginUser = Login(username: username, password: password)
         let signInUrl = baseUrl.appendingPathComponent("auth/login")
         var request = URLRequest(url: signInUrl)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -69,7 +73,7 @@ class APIController {
         
         let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(user)
+            let jsonData = try jsonEncoder.encode(loginUser)
             request.httpBody = jsonData
            
         } catch {
@@ -93,10 +97,15 @@ class APIController {
                 return
             }
             
+
+            let jsonCheck = data.prettyPrintedJSONString!
+            print(jsonCheck)
+            
             do {
                 let decoder = JSONDecoder()
                 self.user = try decoder.decode(User.self, from: data)
-                print(user.username)
+                print(self.user?.token)
+                print(self.user?.id)
             } catch {
                 print("Error encoding user object: \(error)")
                 completion(error)

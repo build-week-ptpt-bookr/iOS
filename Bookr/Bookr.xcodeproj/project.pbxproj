@@ -25,6 +25,9 @@
 		D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F89481230F836E00633A6F /* LoginViewController.swift */; };
 		D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */; };
 		DC6243FC231897B90020B109 /* UIImageView+LoadImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6243FB231897B90020B109 /* UIImageView+LoadImageFromURL.swift */; };
+		DC6243FE2318D8E30020B109 /* JSONData+PrettyPrinted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6243FD2318D8E30020B109 /* JSONData+PrettyPrinted.swift */; };
+		DC6244002318DFC70020B109 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6243FF2318DFC70020B109 /* AppData.swift */; };
+		DC6244022318E4D00020B109 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6244012318E4D00020B109 /* Login.swift */; };
 		DC980DD82314D9DB00F4A6FE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DD62314D9DB00F4A6FE /* Settings.storyboard */; };
 		DC980DDB2314D9F300F4A6FE /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DD92314D9F300F4A6FE /* LoginScreen.storyboard */; };
 		DC980DE02314DA5500F4A6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC980DDE2314DA5500F4A6FE /* Main.storyboard */; };
@@ -52,6 +55,9 @@
 		D7F89481230F836E00633A6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7F8948A2310DB2D00633A6F /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 		DC6243FB231897B90020B109 /* UIImageView+LoadImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImageFromURL.swift"; sourceTree = "<group>"; };
+		DC6243FD2318D8E30020B109 /* JSONData+PrettyPrinted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONData+PrettyPrinted.swift"; sourceTree = "<group>"; };
+		DC6243FF2318DFC70020B109 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		DC6244012318E4D00020B109 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		DC980DD72314D9DB00F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/Settings.storyboard; sourceTree = SOURCE_ROOT; };
 		DC980DDA2314D9F300F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/LoginScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		DC980DDF2314DA5500F4A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookr/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -105,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				2952573E2314C85900D34F73 /* BookController.swift */,
+				DC6243FF2318DFC70020B109 /* AppData.swift */,
 				D76AB05523160282005480B8 /* APIController.swift */,
 			);
 			path = "Model Controllers";
@@ -149,6 +156,7 @@
 			children = (
 				D7F89477230F49BA00633A6F /* SettingsModel.swift */,
 				2929D68F230F7590006E7D0B /* Review.swift */,
+				DC6244012318E4D00020B109 /* Login.swift */,
 				2952573C2314C65700D34F73 /* User.swift */,
 				D7F8947D230F762500633A6F /* Book.swift */,
 			);
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6243FB231897B90020B109 /* UIImageView+LoadImageFromURL.swift */,
+				DC6243FD2318D8E30020B109 /* JSONData+PrettyPrinted.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,15 +245,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6243FE2318D8E30020B109 /* JSONData+PrettyPrinted.swift in Sources */,
 				D7F8947E230F762500633A6F /* Book.swift in Sources */,
 				D7F89478230F49BA00633A6F /* SettingsModel.swift in Sources */,
 				29754B4523130D0500948C2A /* ReviewViewController.swift in Sources */,
 				29754B4323130CE100948C2A /* BookDetailViewController.swift in Sources */,
+				DC6244002318DFC70020B109 /* AppData.swift in Sources */,
 				29754B4123130CAE00948C2A /* BookCollectionViewCell.swift in Sources */,
 				29754B3F23130C9100948C2A /* BooksCollectionViewController.swift in Sources */,
 				2952573F2314C85900D34F73 /* BookController.swift in Sources */,
 				2952573D2314C65700D34F73 /* User.swift in Sources */,
 				DC6243FC231897B90020B109 /* UIImageView+LoadImageFromURL.swift in Sources */,
+				DC6244022318E4D00020B109 /* Login.swift in Sources */,
 				D7F8948B2310DB2D00633A6F /* LoginProtocol.swift in Sources */,
 				293949B8230E217700EDCB93 /* AppDelegate.swift in Sources */,
 				D7F89482230F836E00633A6F /* LoginViewController.swift in Sources */,
