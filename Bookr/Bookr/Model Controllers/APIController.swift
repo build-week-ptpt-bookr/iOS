@@ -93,7 +93,6 @@ class APIController {
                 return
             }
             
-            let decoder = JSONDecoder()
             do {
                 let decoder = JSONDecoder()
                 self.user = try decoder.decode(User.self, from: data)
