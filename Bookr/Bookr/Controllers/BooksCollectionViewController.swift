@@ -11,21 +11,29 @@ import UIKit
 class BooksCollectionViewController: UICollectionViewController {
     
     let bookController = BookController()
+    private let apiController = APIController()
+    
+    var delegate: LoginDelegate?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+ 
+        
+    }
+
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowBookDetailsSegue" {
-            guard let bookIndex = collectionView.indexPathsForSelectedItems?.first?.item, let destinationVC = segue.destination as? BookDetailViewController else { return }
-            
-            destinationVC.bookController = bookController
-            
-            let book = bookController.books[bookIndex]
-            destinationVC.book = book
+        if segue.identifier == "toMain" {
+            if let loginVC = segue.destination as? LoginViewController {
+                loginVC.apiController = apiController
+            }
         }
     }
 

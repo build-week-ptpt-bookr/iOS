@@ -10,11 +10,21 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    enum LoginType {
+        case signUp
+        case signIn
+    }
+    
+    
     let loginButton = UIButton()
-    let signUpButton = UIButton()
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
+    let toggle = UISegmentedControl(items: ["Sign Up", "Log In"])
+    
+//    var apiController: APIController?
+    var apiController = APIController()
+    var loginType = LoginType.signIn
     
 
     override func viewDidLoad() {
@@ -22,7 +32,7 @@ class LoginViewController: UIViewController {
         setupLayout()
         usernameTextField.delegate = self
         
-        // Do any additional setup after loading the view.
+      
     }
     
     func setupLayout() {
@@ -32,7 +42,20 @@ class LoginViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-       
+        
+       //Login/SignUp toggle
+        view.addSubview(toggle)
+        
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+        toggle.tintColor = .white
+        toggle.backgroundColor = .red
+        toggle.addTarget(self, action: #selector(signInTypeChanged), for: .valueChanged)
+        toggle.layer.cornerRadius = 8.0
+        toggle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        toggle.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 75).isActive = true
+        
+        
+        
         // Login Button
         loginButton.title(for: .normal)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -45,18 +68,6 @@ class LoginViewController: UIViewController {
         loginButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        // Sign Up Button
-        signUpButton.title(for: .normal)
-        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        signUpButton.setTitle("Sign Up", for: .normal)
-        view.addSubview(signUpButton)
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        signUpButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 75).isActive = true
-        signUpButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        signUpButton.backgroundColor = .red
-        signUpButton.isHidden = true
         
         
         // textView For Username
@@ -69,6 +80,7 @@ class LoginViewController: UIViewController {
         usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         usernameTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
         usernameTextField.backgroundColor = .lightGray
+        usernameTextField.autocapitalizationType = .none
 
         
         // Password TextView
@@ -84,69 +96,99 @@ class LoginViewController: UIViewController {
         
    
     }
- 
-    // TODO: - Create network call up to API to check if user has account and login if yes.
-    @objc func loginButtonTapped(sender: UIButton) {
-        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
     
-        if user.isEmpty || pass.isEmpty {
-            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
-        }
-        
-        if user.contains(" ") {
-            alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
-            usernameTextField.text = ""
-        }else {
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "toMain", sender: self)
-            }
-        }
-        //
-       
-        
-        //Performs Segue to SettingsSB for testing. Will go to Main screen when it is built.
-//        let acctUser = ["username":user]
-//        let userPass = ["password":pass]
-//       performSegue(withIdentifier: "toMain", sender: sender)
- 
-    
-    }
-    // TODO: - Create network call that adds user into back in and log them in
-    @objc func signUpButtonTapped(sender: UIButton) {
-        guard let pass = passwordTextField.text, let user = usernameTextField.text else { return }
-        
-        if user.isEmpty || pass.isEmpty {
-            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
-        }
-        
-    }
-    
-
+    // Alert code that alerts user of something. Input params title and message
     func alertMessage(title: String, message: String) {
-        
-         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+ 
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true)
-       
+        
+    }
+ 
+    // TODO: - Create network call up to API to check if user has account and login if yes.
+    @objc func loginButtonTapped(_ sender: UIButton) {
+//        let api = apiController
+        guard let password = passwordTextField.text, let username = usernameTextField.text else { return }
+    
+        if username.isEmpty || password.isEmpty {
+            alertMessage(title: "Must fill Out Completely", message: "Please fill out both username and password fields.")
+        }
+        
+        if username.contains(" ") {
+            alertMessage(title: "No Spaces", message: "Username Must Not Contain Spaces.")
+            usernameTextField.text = ""
+        }
+        //let user = User(id: 55, username: username, password: password, roles: ["user"], token: nil)
+        
+        if loginType == .signUp {
+            apiController.signUp(with: username, password: password) { error in
+                if let error = error {
+                    print("Error occured during sign up: \(error)")
+                } else {
+                    
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Sign Up Successful", message: "Now Please log in.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true, completion: {
+                            self.loginType = .signIn
+                            self.loginButton.setTitle("Log In", for: .normal)
+                            self.clearTextFields()
+                        
+                        })
+                    }
+                }
+            }
+          } else if loginType == .signIn {
+            apiController.LogIn(with: username, password: password) { error in
+                if let error = error {
+                    print("Error occured during sign in: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.clearTextFields()
+                        self.performSegue(withIdentifier: "toMain", sender: self)
+                    }
+                  }
+                }
+              }
+            }
+            
+    
+    @objc func signInTypeChanged() {
+        if toggle.selectedSegmentIndex == 0 {
+            // 0 is equal to sign up
+            print("Sign UP")
+            loginType = .signUp
+            loginButton.setTitle("Sign Up", for: .normal)
+        } else {
+            // 1 is equal to sign in
+            print("Sign IN")
+            loginType = .signIn
+            loginButton.setTitle("Log In", for: .normal)
+        }
+    }
+    
+    func clearTextFields() {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     // MARK: - Navigation
     // Segue Information to
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMain" {
-            if let vc = segue.destination as? SettingsViewController { 
+            if let vc = segue.destination as? BooksCollectionViewController { 
                 vc.delegate = self as? LoginDelegate
+                }
             }
         }
-    }
     
+    }
 
-}
 
 // MARK: - Keyboard Management
 extension LoginViewController: UITextFieldDelegate {
-
-    
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //Keyboard appears after tapping fields.
@@ -155,12 +197,10 @@ extension LoginViewController: UITextFieldDelegate {
             case usernameTextField: usernameTextField.becomeFirstResponder()
             case passwordTextField: passwordTextField.becomeFirstResponder()
             default: textField.resignFirstResponder()
-            }
-        }
+             }
+          }
         return true
-    }
-    
+      }
 
-    
-    
-}
+    }
+
