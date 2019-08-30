@@ -72,12 +72,16 @@ extension SettingsViewController: UITableViewDataSource {
    
 }
 
-extension SettingsViewController: LoginDelegate {
-    func userAttemptedToLogIn(_ creds: [String : String]) {
-//        let user = creds[""]
-    }
-    
-    
-    
-    
-}
+//extension SettingsViewController: LoginDelegate {
+//    func userAttemptedToLogIn(_: User) {
+//        <#code#>
+//    }
+//    
+//    func userAttemptedToLogIn(_ creds: [String : String]) {
+////        let user = creds[""]
+//    }
+//    
+//    
+//    
+//    
+//}
